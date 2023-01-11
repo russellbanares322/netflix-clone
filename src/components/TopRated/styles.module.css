@@ -1,0 +1,31 @@
+.body {
+    overflow: hidden;
+    position: relative;
+}
+.title {
+    font-size: 1.2rem;
+    color: #F3F3F3;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.card {
+    min-height: 10rem;
+    overflow: hidden;
+    position: relative;
+}
+.card img {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+.gradient {
+    position: absolute;
+    height: auto;
+    width: auto;
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 10;
+}

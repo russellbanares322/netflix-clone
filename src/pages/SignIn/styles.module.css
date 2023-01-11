@@ -1,0 +1,92 @@
+.form_wrapper {
+    background-image: url('../../assets/netflix-bg.png');
+    background-size: cover;
+    height: 130vh;
+}
+.form_col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6rem;
+    overflow: visible;
+}
+.form {
+    border-radius: 0.3rem;
+    background-color: rgba(0,0,0,.85);
+    padding: 4rem 4rem 9rem 4rem;
+    width: 27rem;
+    z-index: 999999999;
+}
+.title {
+    color: whitesmoke;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.checkbox {
+    margin-right: auto;
+    font-size: small;
+    color: #c4c2c2 !important; 
+}
+.help_text {
+    margin-block-start: auto;
+    margin-top: 1rem;
+    color: #c4c2c2;
+    font-size: small;
+}
+.new_text {
+    color: #808080;
+}
+.new_text span {
+    color: whitesmoke;
+}
+.form_footer {
+    padding-top: 4rem;
+}
+.captcha_text {
+    color: #808080;
+    font-size: small;
+    margin-top: 1rem;
+}
+.learn_text {
+    text-decoration: none;
+}
+.button {
+    background-color: #E50914;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.1rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    font-weight: 700;
+}
+
+.gradient {
+    position: absolute;
+    height: 130vh;
+    width: 100vw;
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
+}
+.gradient2 {
+    position: absolute;
+    height: 130vh;
+    width: 100vw;
+    background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
+}
+.email_input, .password_input {
+    border: none !important ;
+    background-color: #333333 !important;
+    outline: none !important;
+    margin-bottom: 1rem;
+    color: #F3F3F3 !important;
+    height: 2.9rem;
+}
+.checkbox {
+    color: grey;
+
+}
