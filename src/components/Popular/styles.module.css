@@ -14,6 +14,30 @@
     overflow: hidden;
     position: relative;
 }
+
+.card:hover .movie_title_wrapper{
+    display: block;
+}
+
+.movie_title_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 10rem;
+    background: black;
+    opacity: 0.8;
+    display: none;
+}
+.movie_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F3F3F3;
+    font-size: x-small;
+    padding-top: 5rem;
+}
+
 .card img {
     cursor: pointer;
     position: absolute;

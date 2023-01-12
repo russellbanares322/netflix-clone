@@ -38,6 +38,7 @@
 }
 .new_text span {
     color: whitesmoke;
+    cursor: pointer;
 }
 .form_footer {
     padding-top: 4rem;

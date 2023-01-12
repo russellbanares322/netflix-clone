@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './styles.module.css';
-import {Form, Button, Col} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import {Form, Col} from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.form_wrapper}>
       <div className={styles.gradient}></div>
@@ -14,7 +15,6 @@ const SignIn = () => {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Control className={styles.email_input} type="email" placeholder="Email or phone number" />
       </Form.Group>
-
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Control className={styles.password_input} type="password" placeholder="Password" />
       </Form.Group>
@@ -28,8 +28,8 @@ const SignIn = () => {
       <p className={styles.help_text}>Need help?</p>
       </div>
       <div className={styles.form_footer}>
-        <p className={styles.new_text}>New to Netflix? <span>Sign up now.</span></p>
-        <p className={styles.captcha_text}>This page is protected by Google reCAPTCHA to ensure you're not a bot. <Link className={styles.learn_text}>Learn more.</Link></p>
+        <p className={styles.new_text}>New to Netflix? <span onClick={() => navigate('/sign-up')}>Sign up now.</span></p>
+        <p className={styles.captcha_text}>This page is protected by Google reCAPTCHA to ensure you're not a bot. <Link  className={styles.learn_text}>Learn more.</Link></p>
       </div>
     </Form>
     </Col>

@@ -32,16 +32,17 @@ const Popular = () => {
            <div className={styles.wrapper}>
             <Splide options={{
               perPage: 4,
+              gap:3,
               drag:"free",
               pagination:false,
               breakpoints:{
                 640: {
                   perPage:2,
-                  gap: '1rem'
+                  gap: '2rem'
                 }, 
                 480: {
                   perPage: 1,
-                  gap: '1rem'
+                  gap: '2rem'
                 }
               }
             }}>
@@ -50,6 +51,9 @@ const Popular = () => {
               <div className={styles.card}>
                 <div className={styles.gradient}></div>
                 <img className={styles.img} src={`https://image.tmdb.org/t/p/w300/${movie?.backdrop_path}`} alt={movie?.title}/>
+              <div className={styles.movie_title_wrapper}>
+                <p className={styles.movie_title}>{movie?.title}</p>
+              </div>
               </div>
               </SplideSlide>
               ))}
