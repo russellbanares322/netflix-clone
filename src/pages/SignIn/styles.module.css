@@ -1,5 +1,5 @@
 .form_wrapper {
-    background-image: url('../../assets/netflix-bg.png');
+    background-image: url('../../assets/netflix_bg.jpg');
     background-size: cover;
     height: 130vh;
 }
@@ -25,7 +25,7 @@
 .checkbox {
     margin-right: auto;
     font-size: small;
-    color: #c4c2c2 !important; 
+    color: grey !important; 
 }
 .help_text {
     margin-block-start: auto;
@@ -87,7 +87,12 @@
     color: #F3F3F3 !important;
     height: 2.9rem;
 }
-.checkbox {
+.show_pass{ 
+    position: relative;
+    left: 15rem;
+    bottom: 3.2rem;
+    color: white;
+    font-size: 0.9rem;
     color: grey;
-
+    cursor: pointer;
 }

@@ -4,10 +4,10 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import axios from 'axios';
 import requests from '../../Requests';
+import {HiOutlineHeart} from 'react-icons/hi'
 
 const Trending = () => {
   const [movies, setMovies] = useState([]);
-  // const [showTitle, setShowTitle] = useState({});
 
   const handleFetch = () => {
     const check = localStorage.getItem('trendingMovies')
@@ -25,26 +25,6 @@ const Trending = () => {
   useEffect(() => {
     handleFetch();
   }, [])
-
-  //Hover title handler 
-
-  // const handleMouseEnter = (event, index) => {
-  //   setShowTitle(t => {
-  //     return {
-  //       ...t,
-  //       [index]: true
-  //     }
-  //   })
-  // }
-
-  // const handleMouseLeave = (event, index) => {
-  //   setShowTitle(t => {
-  //     return {
-  //       ...t,
-  //       [index]: false
-  //     }
-  //   })  
-  // }
 
 
     return (
@@ -73,9 +53,11 @@ const Trending = () => {
             }}>
             {movies && movies.map((movie) => (
               <SplideSlide key={movie?.id}>
-              <div  className={styles.card}>
+              <div className={styles.card}>
+               <HiOutlineHeart className={styles.heart} size={20}/>
                 <img className={styles.img} src={`https://image.tmdb.org/t/p/w300/${movie?.backdrop_path}`} alt={movie?.title} />
                  <div className={styles.movie_title_wrapper}>
+                  
                 <p className={styles.movie_title}>{movie?.title}</p>
                 </div>
               </div>

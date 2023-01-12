@@ -39,3 +39,26 @@
     background: none;
 }
 
+@media all and (max-width:500px) {
+    .signup_button {
+        background-color: #E50914;
+        color: white;
+        border: none;
+        font-size: 1.1rem;
+        padding: 0.4rem 1.1rem;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        margin-right: 1rem;
+        font-size: 0.8rem;
+    
+    }
+    .signin_button {
+        color: white !important;
+        font-size: 0.8rem;
+        cursor: pointer;
+        border: none;
+        margin-right: 1rem;
+        background: none;
+    }
+
+}

@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './styles.module.css';
 import {Form, Col} from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+  const [show, setShow] = useState(false);
   const navigate = useNavigate();
   return (
-    <div className={styles.form_wrapper}>
+    <div className={styles.form_wrapper} onClick={() => setShow(false)}>
       <div className={styles.gradient}></div>
       <div className={styles.gradient2}></div>
       <Col lg={12} className={styles.form_col}>
@@ -16,7 +17,8 @@ const SignIn = () => {
         <Form.Control className={styles.email_input} type="email" placeholder="Email or phone number" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Control className={styles.password_input} type="password" placeholder="Password" />
+        <Form.Control onClick={() => setShow(!show)} className={styles.password_input} type="password" placeholder="Password" />
+        {show && <p className={styles.show_pass}>SHOW</p>}
       </Form.Group>
       <div className='d-grid gap-2'>
         <button className={styles.button}>Sign In</button>
