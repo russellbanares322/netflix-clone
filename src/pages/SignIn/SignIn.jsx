@@ -1,11 +1,32 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css';
 import {Form, Col} from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../config/firebase-config';
+import { toast } from 'react-toastify';
 
 const SignIn = () => {
   const [show, setShow] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
+
+  const handleSignIn = async(e) => {
+    setIsLoading(true)
+    e.preventDefault();
+    try{
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/');
+      toast.success('Successfully logged in')
+      setIsLoading(false)
+    }catch(err) {
+      toast.error(err.message)
+      setIsLoading(false)
+    }
+  }  
   return (
     <div className={styles.form_wrapper} onClick={() => setShow(false)}>
       <div className={styles.gradient}></div>
@@ -14,14 +35,14 @@ const SignIn = () => {
        <Form className={styles.form}>
         <p className={styles.title}>Sign In</p>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control className={styles.email_input} type="email" placeholder="Email or phone number" />
+        <Form.Control onChange={(e) => setEmail(e.target.value)} className={styles.email_input} type="email" placeholder="Email or phone number" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Control onClick={() => setShow(!show)} className={styles.password_input} type="password" placeholder="Password" />
+        <Form.Control onChange={(e) => setPassword(e.target.value)} onClick={() => setShow(!show)} className={styles.password_input} type="password" placeholder="Password" />
         {show && <p className={styles.show_pass}>SHOW</p>}
       </Form.Group>
       <div className='d-grid gap-2'>
-        <button className={styles.button}>Sign In</button>
+        <button disabled={isLoading} onClick={handleSignIn} className={styles.button}>Sign In</button>
       </div>
       <div className='d-flex justify-content-start align-items-center'>
       <Form.Group className={styles.checkbox}controlId="formBasicCheckbox">

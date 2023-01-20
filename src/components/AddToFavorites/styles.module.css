@@ -1,0 +1,39 @@
+.heart {
+    position: absolute;
+    top: 0.3rem;
+    right: 1rem;
+    color: white;
+    z-index: 999999999999999;
+    cursor: pointer;
+}
+
+@media screen and (max-width:500px) {
+    .heart {
+        position: absolute;
+        top: 0.3rem;
+        right: 1rem;
+        color: white;
+        z-index: 999999999999999;
+        cursor: pointer;
+    }
+}
+@media screen and (max-width:800px) {
+    .heart {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        color: white;
+        z-index: 999999999999999;
+        cursor: pointer;
+    }
+}
+@media screen and (max-width:1200px) {
+    .heart {
+        position: absolute;
+        top: 0.3rem;
+        right: 1rem;
+        color: white;
+        z-index: 999999999999999;
+        cursor: pointer;
+    }
+}

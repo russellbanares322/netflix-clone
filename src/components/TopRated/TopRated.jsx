@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import axios from 'axios';
+import AddtoFavorites from '../AddToFavorites/AddtoFavorites';
 
 const TopRated = () => {
   const [movies, setMovies] = useState([]);
@@ -37,11 +38,14 @@ const TopRated = () => {
               breakpoints:{
                 640: {
                   perPage:2,
-                  gap: '2rem'
+                  gap: '1rem'
                 }, 
                 480: {
                   perPage: 1,
-                  gap: '2rem'
+                  gap: '1rem'
+                }, 300: {
+                  perPage:1,
+                  gap:'1rem'
                 }
               }
             }}>
@@ -50,6 +54,7 @@ const TopRated = () => {
               <div className={styles.card}>
                 <div className={styles.gradient}></div>
                 <img className={styles.img} src={`https://image.tmdb.org/t/p/w300/${movie?.backdrop_path}`} alt={movie?.title}/>
+                <AddtoFavorites />
                 <div className={styles.movie_title_wrapper}>
                 <p className={styles.movie_title}>{movie?.title}</p>
                 </div>

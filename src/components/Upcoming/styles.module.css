@@ -13,6 +13,17 @@
     min-height: 10rem;
     overflow: hidden;
     position: relative;
+    transition: all 0.3s ease-in-out;
+    margin-left: 0.3rem;
+}
+
+.card img {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
 }
 .card:hover .movie_title_wrapper{
     display: block;
@@ -22,8 +33,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 20rem;
-    height: 10rem;
+    width: 100%;
+    height: 100%;
     background: black;
     opacity: 0.8;
     display: none;
@@ -35,21 +46,4 @@
     color: #F3F3F3;
     font-size: x-small;
     padding-top: 5rem;
-}
-.card img {
-    cursor: pointer;
-    position: absolute;
-    left: 0;
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-.gradient {
-    position: absolute;
-    height: auto;
-    width: auto;
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
-    z-index: 10;
 }
