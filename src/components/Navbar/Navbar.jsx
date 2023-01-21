@@ -25,7 +25,7 @@ const Navbar = () => {
               {user ? 
               <div className={styles.username_wrapper}> 
               <div>
-              <span className={styles.favorites}>Favorites</span> 
+              <span className={styles.favorites} onClick={() => navigate('/favorites')}>Favorites</span> 
               </div>
               <div>
               <span className={styles.username}>Hi, {user?.displayName}</span> 

@@ -5,12 +5,15 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { MovieProvider } from './context/MovieContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
-    <App />
-    <ToastContainer
+      <MovieProvider>
+        <App />
+    </MovieProvider>
+      <ToastContainer
         position="bottom-right"
         autoClose={2000}
         hideProgressBar={false}
@@ -21,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         draggable
         pauseOnHover
         theme="light"
-      />
+        />
     </Router>
   </React.StrictMode>,
 )

@@ -19,8 +19,9 @@
     background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
 }
 .movie_wrapper {
+    padding-bottom: 10rem;
     background-color: #000000 !important; 
-    height: 160vh;
+    height: auto;
     color: #F3F3F3;
     display: flex;
     flex-direction: row;
@@ -33,11 +34,25 @@
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1.4rem;
+    font-weight: 700;
 }
 .movie_img {
-    width: 25rem;
+    width: auto;
     height: 25rem;
     object-fit: contain;
+    border: 1px solid #F3F3F3;
+    z-index: 99999999;
+    position: absolute;
+    border-radius: 1rem;
+}
+.img_shadow {
+    position: relative;
+    background-color: #E50914;
+    height: 25rem;
+    width: 16.3rem;
+    top: -0.3rem;
+    right: -0.8rem;
+    border-radius: 1rem;
 }
 .movie_div {
     padding-top: 6rem;
@@ -45,16 +60,42 @@
 .movie_overview {
     text-align: justify;
     font-weight: 400;
-}
-.movie_vote_average{
-    margin-bottom: 2rem;
+    line-height: 1.5;
 }
 .movie_link {
     margin-top: 2rem;
+    cursor: pointer;
 }
+.movie_release_date {
+    margin-bottom: 2rem;
+}
+
 .left {
     display: flex;
     flex-direction: column;
     width: 30rem;
     margin-bottom: 2rem;
+}
+
+@media all and (max-width:500px) {
+    .movie_overview {
+        text-align: justify;
+        font-weight: 400;
+        padding: 0 3rem;
+    }
+    .movie_vote_average{
+        margin-bottom: 2rem;
+        padding: 0 3rem;
+    }
+    .movie_link {
+        margin-top: 2rem;
+        cursor: pointer;
+        padding: 0 3rem;
+    }
+    .movie_release_date {
+        padding: 0 3rem;
+    }
+    .movie_status {
+        padding: 0 3rem;
+    }
 }
