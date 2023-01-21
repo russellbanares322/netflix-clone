@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import { MovieProvider } from './context/MovieContext'
 import Home from './pages/Home/Home';
+import MovieDetails from './pages/MovieDetails/MovieDetails';
 import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
 import Projects from './Projects';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/sign-in" element={<SignIn />}/>
           <Route path="/sign-up" element={<SignUp />}/>
           <Route path="/projects" element={<Projects />}/>
+          <Route path='/movie-details/:id' element={<MovieDetails />} />
         </Routes>
       </MovieProvider>
      

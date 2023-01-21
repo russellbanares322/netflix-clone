@@ -4,9 +4,11 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import axios from 'axios';
 import AddtoFavorites from '../AddToFavorites/AddtoFavorites';
+import { useNavigate } from 'react-router-dom';
 
 const TopRated = () => {
   const [movies, setMovies] = useState([]);
+  const navigate = useNavigate();
 
   const handleFetch = () => {
     const check = localStorage.getItem('trendingMovies')
@@ -52,10 +54,9 @@ const TopRated = () => {
             {movies && movies.map((movie) => (
               <SplideSlide key={movie?.id}>
               <div className={styles.card}>
-                <div className={styles.gradient}></div>
                 <img className={styles.img} src={`https://image.tmdb.org/t/p/w300/${movie?.backdrop_path}`} alt={movie?.title}/>
                 <AddtoFavorites />
-                <div className={styles.movie_title_wrapper}>
+                <div className={styles.movie_title_wrapper} onClick={() => navigate(`/movie-details/${movie?.id}`)}>
                 <p className={styles.movie_title}>{movie?.title}</p>
                 </div>
               </div>
