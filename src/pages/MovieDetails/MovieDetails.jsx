@@ -30,7 +30,7 @@ const MovieDetails = () => {
     <>
     {isLoading ?  <Spinner /> 
     : <>
-        <div className={styles.body}>
+        <div className={styles.header}>
             <div className={styles.gradient}></div>
                 <div className={styles.gradient2}></div>
             </div>

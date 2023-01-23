@@ -15,7 +15,6 @@ const Navbar = () => {
       signOut(auth)
       navigate('/')
     }
-
   return (
     <div className={styles.nav_wrapper}>
             <h1 className={styles.title} onClick={() => navigate('/')}>Netflix</h1>

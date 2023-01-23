@@ -54,8 +54,10 @@ const TopRated = () => {
             {movies && movies.map((movie) => (
               <SplideSlide key={movie?.id}>
               <div className={styles.card}>
-                <img className={styles.img} src={`https://image.tmdb.org/t/p/w300/${movie?.backdrop_path}`} alt={movie?.title}/>
-                <AddtoFavorites />
+                {movie?.backdrop_path !== null ?<img className={styles.img} src={`https://image.tmdb.org/t/p/w300/${movie?.backdrop_path}`} alt={movie?.title}/> 
+                : 
+                <img src="https://via.placeholder.com/300x300.png?text=No+Available+Picture" />}
+                <AddtoFavorites movie={movie}/>
                 <div className={styles.movie_title_wrapper} onClick={() => navigate(`/movie-details/${movie?.id}`)}>
                 <p className={styles.movie_title}>{movie?.title}</p>
                 </div>

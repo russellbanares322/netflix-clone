@@ -1,0 +1,101 @@
+.header {
+    background-image: url('../../assets/netflix_bg.jpg');
+    background-size: cover;
+    height: 70vh;
+    padding-bottom: 2rem;
+}
+.gradient {
+    position: absolute;
+    height: 70vh;
+    width: 60vw;
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
+}
+.gradient2{
+    position: absolute;
+    height: 70vh;
+    width: 100vw;
+    background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
+}
+.favorites_wrapper {
+    background-color: #000000 !important;
+    height: auto;
+}
+.title {
+    text-align: center;
+    color: #F3F3F3;
+    padding-top: 4rem;
+    font-size: 1.8rem;
+}
+.card_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3rem 4rem;
+    justify-content: center;
+    align-items: center;
+}
+.movie_title {
+    color: #F3F3F3;
+    text-align: center;
+    padding-top: 1rem;
+}
+.card {
+    transition: 0.3s ease-in-out;
+    margin: 3rem 2rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width: 20rem;
+    height: 30rem;
+    cursor: pointer;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background: rgba(255, 255, 255, 0.17);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+}
+.card:hover {
+    transform: translateY(-7px);
+}
+.movie_image {
+    width: 20rem;
+    height: 13rem;
+    object-fit:fill;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.movie_details {
+    text-align: justify;
+    color: #F3F3F3;
+    font-size: small;
+    padding: 0 2rem;
+}
+.heart{
+    position: absolute;
+    right: 1rem;
+    top: 0.8rem;
+}
+
+@media screen and (max-width:500px) {
+    .title {
+        text-align: center;
+        color: #F3F3F3;
+        padding-top: 4rem;
+        font-size: 1.2rem;
+    }
+    .card {
+        transition: 0.3s ease-in-out;
+        margin: 1rem 2rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        width: 20rem;
+        height: 30rem;
+        cursor: pointer;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background: rgba(255, 255, 255, 0.17);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(0.5px);
+        -webkit-backdrop-filter: blur(0.5px);
+    }
+}
