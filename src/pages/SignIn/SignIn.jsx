@@ -15,8 +15,11 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const handleSignIn = async(e) => {
-    setIsLoading(true)
     e.preventDefault();
+    setIsLoading(true)
+    if(!email || !password) {
+      return toast.error('Fields cannot be left empty');
+    } 
     try{
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/');

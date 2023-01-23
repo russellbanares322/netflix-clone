@@ -57,8 +57,77 @@
     width: 100vw;
     background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
 }
-
-@media (max-width: 640px) {
+@media screen and (max-width:500px){
+    .img {
+        height: 50vh!important;
+        width: 100vw !important;
+        object-fit: cover;
+    }    
+    .main {
+        width: 100vw;
+        height: 50vh;
+        overflow: hidden;
+    }
+    .movie_wrapper{
+        width: 100vw;
+        height: 50vh;
+        z-index: 10;
+    }
+    .details {
+        position: relative;
+        bottom: 20rem !important;
+        left: 1rem;
+    }
+    .title {
+        color: #F3F3F3;
+        font-size:1.2rem;
+        font-weight: 800;
+    }
+    .date {
+        color: #F3F3F3;
+        font-size: 0.9rem;
+    }
+    .overview{
+        color: #F3F3F3;
+        text-align:start;
+        width: 20rem;
+        font-size: 0.9rem;
+    }
+    .play{
+        background-color: #F3F3F3;
+        border: none;
+        height: 2rem;
+        width: 4rem;
+        margin-right: 1rem;
+    }
+    .later {
+        background-color: transparent;
+        border:1px solid #F3F3F3 !important;
+        height: 2rem;
+        width: 7rem;
+        color: #F3F3F3;
+    }
+    .btns_wrapper {
+        margin-bottom: 1rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    .img {
+        height: 60vh!important;
+        width: 100vw !important;
+        object-fit: cover;
+    }
+    
+    .main {
+        width: 100vw;
+        height: 60vh;
+        overflow: hidden;
+    }
+    .movie_wrapper{
+        width: 100vw;
+        height: 60vh;
+        z-index: 10;
+    }
     .details {
         position: relative;
         bottom: 20rem;

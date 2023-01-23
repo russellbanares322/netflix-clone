@@ -17,14 +17,14 @@ const SignUp = () => {
 
   //Signup handler
   const handleSignUp = async(e) => {
-    setIsLoading(true)
+    setIsLoading(false)
     e.preventDefault()
     if(!userName || !email || !password) {
       return toast.error('Fields cannot be left empty');
     } 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setIsLoading(false);
+      setIsLoading(true);
       updateProfile(auth.currentUser,{displayName: userName});
       setDoc(doc(db, "users", email), {
         savedMovies:[],
@@ -54,7 +54,7 @@ const SignUp = () => {
         <Form.Control  value={password} onChange={(e) => setPassword(e.target.value)} className={styles.password_input} type="password" placeholder="Password" />
       </Form.Group>
       <div className='d-grid gap-2'>
-        <button style={{backgroundColor: isLoading && userName.length === 0 || email.length ===0 || password.length === 0 ? "#CF2828" : '#E50914'}} onClick={handleSignUp} disabled={isLoading} className={styles.button}>{isLoading ? "Signing up...": "Sign Up"}</button>
+        <button onClick={handleSignUp} disabled={isLoading} className={styles.button}>{isLoading ? "Signing up...": "Sign Up"}</button>
       </div>
       <div className='d-flex justify-content-start align-items-center'>
       <Form.Group className={styles.checkbox}controlId="formBasicCheckbox">

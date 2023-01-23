@@ -1,0 +1,85 @@
+.body {
+    background-color: #000000;
+    height: auto;
+    color: #6b6b6b;
+}
+.footer_wrapper {
+    padding: 0.8rem 7rem;
+}
+.footer_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.question_text {
+    margin-left: 6rem;
+}
+li {
+    list-style: none;
+    margin-top: 0.7rem;
+    font-size: small;
+    cursor: pointer;
+}
+li:hover {
+    text-decoration: underline;
+}
+.select_wrapper {
+    margin: 2rem 0 1rem 6rem;
+}
+
+.select_wrapper select {
+    background-color: transparent;
+    color: #c4c2c2;
+    padding: 0.8rem 0 0.8rem 3rem;
+    appearance: none;
+    width: 8rem;
+    height: 3.5rem;
+    position: relative;
+}
+.globe{
+    position: absolute;
+    left: 14rem;
+    margin: 1.1rem 0 1rem 0;
+    color: #c4c2c2;
+}
+.triangle {
+    position:absolute;
+    left: 19.4rem;
+    color: #c4c2c2;
+    margin: 1.2rem 0 0 0;
+}
+
+.select_wrapper select option {
+    background-color: #000000;
+    color: #c4c2c2;
+}
+.brand_name_wrapper{
+    margin-left: 6rem;
+}
+.brand_name_wrapper p {
+    font-size: small;
+}
+
+@media screen and (max-width:500px) {
+    .footer_wrapper {
+        padding: 0.1rem 0.3rem;
+    }
+    .question_text {
+        margin-left: 1.5rem;
+    }
+    .globe{
+        position: absolute;
+        left: 2rem;
+        margin: 1.1rem 0 1rem 0;
+        color: #c4c2c2;
+    }
+    .triangle {
+        position:absolute;
+        left: 7.8rem;
+        color: #c4c2c2;
+        margin: 1.3rem 0 0 0;
+    }
+    .select_wrapper {
+        margin: 2rem 0 1rem 1rem;
+    }
+}

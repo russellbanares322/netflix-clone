@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../components/Footer/Footer';
 import Main from '../../components/Main/Main';
 import Popular from '../../components/Popular/Popular';
 import TopRated from '../../components/TopRated/TopRated';
@@ -15,7 +16,9 @@ const Home = () => {
     <Popular />
     <Trending />
     <TopRated />
+    <hr style={{height:'0.4rem', backgroundColor:'grey', marginTop:'4rem'}}/>
     </div>
+    <Footer />
     </>
   )
 }
