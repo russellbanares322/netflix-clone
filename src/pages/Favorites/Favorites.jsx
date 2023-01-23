@@ -3,9 +3,11 @@ import MovieContext from '../../context/MovieContext';
 import styles from './styles.module.css';
 import {HiOutlineHeart as Heart} from 'react-icons/hi';
 import ReactHtmlParser  from 'react-html-parser';
+import { useNavigate } from 'react-router-dom';
  
 const Favorites = () => {
   const {movies, handleRemoveMovie} = useContext(MovieContext);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -17,7 +19,7 @@ const Favorites = () => {
       <p className={styles.title}>You currrently have {movies?.length} saved movies</p>
       <div className={styles.card_wrapper}>
         {movies?.map((movie) => (
-          <div className={styles.card} key={movie?.id}>
+          <div className={styles.card} key={movie?.id} onClick={() => navigate(`/movie-details/${movie?.id}`)}>
             <img className={styles.movie_image} src={movie?.imageUrl} alt={movie?.original_title}/>
             <Heart style={{fill:'#AF1C22', color:'white'}} className={styles.heart} size={23} onClick={() => handleRemoveMovie(movie)}/>
             <p className={styles.movie_title}>{movie?.original_title}</p>
