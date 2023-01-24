@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Image } from 'react-bootstrap';
 import requests from '../../Requests';
 import styles from './styles.module.css';
-import ReactHtmlParser from 'react-html-parser';
  
 const Main = () => {
   const [movies, setMovies] = useState([]);
@@ -38,7 +37,7 @@ const Main = () => {
           <button className={styles.later}>Watch Later</button>
         </div>
         <p className={styles.date}>Released: {movie?.release_date}</p>
-        <p className={styles.overview}>{ReactHtmlParser(movie?.overview.split(".")[0])}.</p>
+        <p className={styles.overview}>{movie?.overview.substring(0,120)}...</p>
         </div>
       </div>
     </div>

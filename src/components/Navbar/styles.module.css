@@ -76,9 +76,43 @@
     padding-top: 5rem;
     cursor: pointer;
 }
-@media all and (max-width:300px) {
+@media all and (max-width:500px) {
+    .favorites {
+        color: #F3F3F3;
+        margin-right: 0.8rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding-top: 5rem;
+        cursor: pointer;
+    }
+    .logout_button {
+        background-color: #E50914;
+        color: white;
+        border: none;
+        font-size: 1rem;
+        border-radius: 0.2rem;
+        padding: 0.3rem 0.9rem;
+        cursor: pointer;
+    }
+    .signup_button {
+        background-color: #E50914;
+        color: white;
+        border: none;
+        font-size: 1.1rem;
+        padding: 0.4rem 1.1rem;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        margin-right: 0.2rem;
+    
+    }
+    .button_wrapper {
+        display: flex;
+        padding-top: 0.5rem;
+        justify-content: center;
+        align-items: center;
+    }
     .username_wrapper {
-        margin-right: 1rem;
+        margin-right: 0.1rem;
     }  
     .username {
         color: #F3F3F3;
@@ -98,7 +132,7 @@
     }
 }
 
-@media all and (max-width:500px) {
+@media all and (max-width:800px) {
     .signup_button {
         background-color: #E50914;
         color: white;
@@ -129,7 +163,6 @@
         background-color: #E50914;
         color: white;
         border: none;
-        font-size: 1.1rem;
         padding: 0.4rem 1.1rem;
         border-radius: 0.2rem;
         cursor: pointer;
