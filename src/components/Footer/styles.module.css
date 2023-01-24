@@ -62,10 +62,10 @@ li:hover {
 
 @media screen and (max-width:500px) {
     .footer_wrapper {
-        padding: 0.1rem 0.3rem;
+        padding: 0.1rem 0.1rem;
     }
     .question_text {
-        margin-left: 1.5rem;
+        margin-left: 1.1rem;
     }
     .globe{
         position: absolute;
@@ -84,5 +84,12 @@ li:hover {
     }
     .brand_name_wrapper{
         margin-left: 1rem;
+    }
+    li {
+        list-style: none;
+        margin-top: 0.6rem;
+        font-size: 0.6rem;
+        cursor: pointer;
+        padding-right: 1.4rem;
     }
 }

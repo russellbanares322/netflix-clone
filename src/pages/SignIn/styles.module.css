@@ -1,7 +1,8 @@
 .form_wrapper {
     background-image: url('../../assets/netflix_bg.jpg');
     background-size: cover;
-    height: 130vh;
+    height: auto;
+    padding-bottom: 1.9rem;
 }
 .form_col{
     display: flex;
@@ -15,7 +16,7 @@
     background-color: rgba(0,0,0,.85);
     padding: 4rem 4rem 9rem 4rem;
     width: 27rem;
-    z-index: 999999999;
+    z-index: 1;
 }
 .title {
     color: whitesmoke;
@@ -69,13 +70,13 @@
 
 .gradient {
     position: absolute;
-    height: 130vh;
+    height: 120vh;
     width: 100vw;
     background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
 }
 .gradient2 {
     position: absolute;
-    height: 130vh;
+    height: 120vh;
     width: 100vw;
     background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
 }

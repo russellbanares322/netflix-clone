@@ -91,8 +91,9 @@
     .overview{
         color: #F3F3F3;
         text-align:start;
-        width: 1rem;
+        width: 0.9rem;
         font-size: 0.9rem;
+        padding: 0 1rem 0 0;
     }
     .play{
         background-color: #F3F3F3;
