@@ -82,4 +82,7 @@ li:hover {
     .select_wrapper {
         margin: 2rem 0 1rem 1rem;
     }
+    .brand_name_wrapper{
+        margin-left: 1rem;
+    }
 }

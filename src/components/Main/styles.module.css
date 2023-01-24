@@ -1,7 +1,7 @@
 
 .main {
     width: 100vw;
-    height: 90vh;
+    height: 70vh;
     overflow: hidden;
 }
 .movie_wrapper{
@@ -10,19 +10,19 @@
     z-index: 10;
 }
 .img {
-    height: 100vh!important;
+    height: 70vh!important;
     width: 100vw !important;
-    object-fit: cover;
+    object-fit:cover;
 }
 
 .details {
     position: relative;
-    bottom: 28rem;
+    bottom: 18rem;
     left: 3rem;
 }
 .title {
     color: #F3F3F3;
-    font-size:2rem;
+    font-size:1.8rem;
     font-weight: 800;
 }
 .date {
@@ -32,6 +32,7 @@
     color: #F3F3F3;
     text-align: justify;
     width: 35rem;
+    font-size: 1rem;
 }
 .play{
     background-color: #F3F3F3;
@@ -48,14 +49,14 @@
     color: #F3F3F3;
 }
 .btns_wrapper {
-    margin: 2rem 0 1rem 0;
+    margin: 0.1rem 0 1rem 0;
 
 }
 .gradient {
     position: absolute;
-    height: 90vh;
+    height: 70vh;
     width: 100vw;
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,3) 0%, rgba(255,255,255,0) 100%);
 }
 @media screen and (max-width:500px){
     .img {
@@ -75,7 +76,7 @@
     }
     .details {
         position: relative;
-        bottom: 20rem !important;
+        bottom: 16rem !important;
         left: 1rem;
     }
     .title {
@@ -90,7 +91,7 @@
     .overview{
         color: #F3F3F3;
         text-align:start;
-        width: 20rem;
+        width: 28rem;
         font-size: 0.9rem;
     }
     .play{
@@ -110,6 +111,12 @@
     .btns_wrapper {
         margin-bottom: 1rem;
     }
+    .gradient {
+        position: absolute;
+        height: 50vh;
+        width: 100vw;
+        background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    }
 }
 @media screen and (max-width: 800px) {
     .img {
@@ -117,7 +124,6 @@
         width: 100vw !important;
         object-fit: cover;
     }
-    
     .main {
         width: 100vw;
         height: 60vh;
@@ -130,7 +136,7 @@
     }
     .details {
         position: relative;
-        bottom: 20rem;
+        bottom: 15rem;
         left: 1rem;
     }
     .title {
@@ -145,7 +151,7 @@
     .overview{
         color: #F3F3F3;
         text-align:start;
-        width: 20rem;
+        width: 23rem;
         font-size: 0.9rem;
     }
     .play{
@@ -164,5 +170,11 @@
     }
     .btns_wrapper {
         margin-bottom: 1rem;
+    }
+    .gradient {
+        position: absolute;
+        height: 60vh;
+        width: 100vw;
+        background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
     }
 }

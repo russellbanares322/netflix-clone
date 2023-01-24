@@ -2,19 +2,19 @@
 .header {
     background-image: url('../../assets/netflix_bg.jpg');
     background-size: cover;
-    height: 70vh;
+    height: 50vh;
     padding-bottom: 2rem;
 }
 
 .gradient {
     position: absolute;
-    height: 70vh;
+    height: 50vh;
     width: 60vw;
     background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
 }
 .gradient2 {
     position: absolute;
-    height: 70vh;
+    height: 50vh;
     width: 100vw;
     background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
 }
@@ -29,6 +29,15 @@
     padding-top: 10rem !important;
     flex-wrap: wrap;
 
+}
+.main_title {
+    color: #F3F3F3;
+    position: absolute;
+    top: 12rem;
+    left: 3rem;
+    z-index: 1;
+    font-size: 2rem;
+    font-weight: 600;
 }
 .movie_title {
     font-size: 2rem;

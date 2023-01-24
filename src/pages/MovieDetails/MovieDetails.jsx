@@ -15,7 +15,6 @@ const MovieDetails = () => {
         setIsLoading(true)
         await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${import.meta.env.VITE_REACT_APP_API_KEY}&language=en-US&append_to_response=credits`).then((res) => {
             setMovieDetails(res.data)
-            console.log(res.data)
             setIsLoading(false)
         }).catch((err) => {
             toast.error(err.message)
@@ -32,6 +31,7 @@ const MovieDetails = () => {
                 <Spinner />
                 : <>
                     <div className={styles.header}>
+                        <p className={styles.main_title}>Movie Details</p>
                         <div className={styles.gradient}></div>
                         <div className={styles.gradient2}></div>
                     </div>
