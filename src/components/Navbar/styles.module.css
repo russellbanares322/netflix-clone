@@ -98,8 +98,8 @@
         background-color: #E50914;
         color: white;
         border: none;
-        font-size: 1.1rem;
-        padding: 0.4rem 1.1rem;
+        font-size: 1rem;
+        padding: 0.3rem 0.9rem;
         border-radius: 0.2rem;
         cursor: pointer;
         margin-right: 0.2rem;
@@ -130,6 +130,14 @@
         margin-left: 1rem;
         letter-spacing: 1px;
     }
+    .signin_button {
+        color: white !important;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+        margin-right: 1rem;
+        background: none;
+    }
 }
 
 @media all and (max-width:800px) {
@@ -137,15 +145,15 @@
         background-color: #E50914;
         color: white;
         border: none;
-        font-size: 1.1rem;
-        padding: 0.4rem 1.1rem;
+        font-size: 1rem;
+        padding: 0.2rem 0.9rem;
         border-radius: 0.2rem;
         cursor: pointer;
     
     }
     .signin_button {
         color: white !important;
-        font-size: 0.8rem;
+        font-size: 1rem;
         cursor: pointer;
         border: none;
         margin-right: 1rem;

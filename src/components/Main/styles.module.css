@@ -2,7 +2,6 @@
 .main {
     width: 100vw;
     height: 70vh;
-    overflow: hidden;
 }
 .movie_wrapper{
     width: 100vw;
@@ -13,6 +12,9 @@
     height: 70vh!important;
     width: 100vw !important;
     object-fit:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .details {
@@ -33,6 +35,7 @@
     text-align: justify;
     width: 35rem;
     font-size: 1rem;
+    font-weight: 500;
 }
 .play{
     background-color: #F3F3F3;
@@ -81,7 +84,7 @@
     }
     .title {
         color: #F3F3F3;
-        font-size:1.2rem;
+        font-size:1.1rem;
         font-weight: 800;
     }
     .date {
@@ -142,7 +145,7 @@
     }
     .title {
         color: #F3F3F3;
-        font-size:1.2rem;
+        font-size:1.1rem;
         font-weight: 800;
     }
     .date {
