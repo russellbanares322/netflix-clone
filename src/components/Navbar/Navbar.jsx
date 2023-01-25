@@ -27,9 +27,6 @@ const Navbar = () => {
               <span className={styles.favorites} onClick={() => navigate('/favorites')}>Favorites</span> 
               </div>
               <div>
-              <span className={styles.username}>Hi, {user?.displayName}</span> 
-              </div>
-              <div >
                   <button className={styles.logout_button} onClick={handleLogout}>Logout</button>
               </div>
               </div>

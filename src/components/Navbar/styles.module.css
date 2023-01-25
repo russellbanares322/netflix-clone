@@ -48,16 +48,9 @@
 }
 .username_wrapper {
     display: flex;
-    padding: 0.5rem 3rem 0 0;
+    padding: 0.5rem 1rem 0 0;
     justify-content: center;
     align-items: center;
-}
-.username {
-    color: #F3F3F3;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-right: 1rem;
-    padding-top: 5rem;
 }
 .logout_button {
     background-color: #E50914;
@@ -71,10 +64,10 @@
 .favorites {
     color: #F3F3F3;
     margin-right: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     padding-top: 5rem;
-    cursor: pointer;
+    cursor: pointer; 
 }
 @media all and (max-width:500px) {
     .favorites {
@@ -114,12 +107,6 @@
     .username_wrapper {
         margin-right: 0.1rem;
     }  
-    .username {
-        color: #F3F3F3;
-        font-weight: 600;
-        font-size: 0.9rem;
-    }
-    
     .title {
         color: #E50914 !important;
         text-transform: uppercase;
@@ -160,12 +147,7 @@
         background: none;
     }
     .username_wrapper {
-        padding-right: 0.4rem;
-    }
-    .username {
-        color: #F3F3F3;
-        font-weight: 600;
-        font-size: 0.9rem;
+        padding-right: 0.1rem;
     }
     .logout_button {
         background-color: #E50914;
