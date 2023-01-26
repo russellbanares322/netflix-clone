@@ -90,15 +90,9 @@
 
 @media screen and (max-width:500px) {
     .gradient {
-        position: absolute;
-        height: 138vh;
-        width: 100vw;
-        background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
+      display: none;
     }
     .gradient2 {
-        position: absolute;
-        height: 138vh;
-        width: 100vw;
-        background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 60%);
+        display: none;
     }
 }
