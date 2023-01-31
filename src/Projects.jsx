@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import './styles.css';
 const data = [
     {   id: 1,
         name: 'TEST',
@@ -22,15 +24,38 @@ const data = [
     }
 ]
 
+const routes = [ 
+    {
+        title:'Home',
+        path:'/home',
+    },
+    {
+        title:'About',
+        path:'/about',
+    },
+    {
+        title:'Product',
+        path:'/product',
+    },
+]
+
+const navLinks = ['home', 'about', 'downloads', 'docs', 'get involved', 'security'];
+
 const Projects = () => {
     const [userData, setUserData] = useState(data)
     const [optionValue, setOptionValue] = useState('')
     const [input, setInput] = useState('');
+    const navigate = useNavigate();
+
+
     const [userForm, setUserForm] = useState({
         id:Math.floor(Math.random() * 100),
         name: '',
         salary:''
     })
+    useEffect(() => {
+        console.log(Math.random().toString(16).substring(2,8));
+    }, [])
 
     const handleSearch = (e) => {
         setInput(e.target.value);
@@ -88,6 +113,23 @@ const Projects = () => {
                 <option value="TEST">TEST</option>
             </select>
             </div>
+            <div style={{display:'flex'}}>
+                {routes.map((route) => (
+                    <div key={route.id}>
+                        <ul>
+                            <li onClick={() => navigate(route.path)}>{route.title}</li>
+                        </ul>
+                    </div>
+                ))}
+            </div>
+                <div style={{display:'flex'}}>
+            {navLinks.map((link) => (
+                    <ul key={link.id} >
+                        <li>{link.toUpperCase()}
+                        </li>
+                    </ul>
+                    ))}
+                </div>
             <br />
             <input type="text" placeholder="Search here..." onChange={handleSearch}/>
             <br />

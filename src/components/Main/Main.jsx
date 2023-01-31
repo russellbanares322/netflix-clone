@@ -6,7 +6,6 @@ import styles from './styles.module.css';
  
 const Main = () => {
   const [movies, setMovies] = useState([]);
-
   const movie = movies[Math.floor(Math.random() * movies.length)]
 
   const handleFetchMovies = () => {

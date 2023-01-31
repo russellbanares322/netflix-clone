@@ -34,13 +34,11 @@ const AddtoFavorites = ({movie}) => {
   }
   return (
     <div>
-      {user && <>
         {savedMovieID?.includes(movie?.id) ? 
-       ( <Heart style={{fill:'#AF1C22', color:'white'}} className={styles.heart} size={20} onClick={handleSaveMovie}/> )
+       ( <Heart style={{fill:'#AF1C22', color:'white'}} className={styles.heart} size={20} onClick={() => {user ? handleSaveMovie() : toast.error('You need to login')}}/> )
      : 
-       (<Heart style={{fill:'rgba(0, 0, 0, 0.5)', color:'white'}} className={styles.heart} size={20} onClick={handleSaveMovie}/>)
-      }
-      </>}
+       (<Heart style={{fill:'rgba(0, 0, 0, 0.5)', color:'white'}} className={styles.heart} size={20} onClick={() => {user ? handleSaveMovie() : toast.error('You need to login')}}/>)
+       }
     </div>
   )
 }
