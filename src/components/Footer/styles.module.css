@@ -9,10 +9,12 @@
 .footer_row{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
 }
 .question_text {
-    margin-left: 6rem;
+    margin-left: 8.8rem;
 }
 li {
     list-style: none;
@@ -24,7 +26,7 @@ li:hover {
     text-decoration: underline;
 }
 .select_wrapper {
-    margin: 2rem 0 1rem 6rem;
+    margin: 2rem 0 1rem 9rem;
 }
 
 .select_wrapper select {
@@ -38,13 +40,13 @@ li:hover {
 }
 .globe{
     position: absolute;
-    left: 14rem;
+    left: 17rem;
     margin: 1.1rem 0 1rem 0;
     color: #c4c2c2;
 }
 .triangle {
     position:absolute;
-    left: 19.4rem;
+    left: 22.5rem;
     color: #c4c2c2;
     margin: 1.2rem 0 0 0;
 }
@@ -54,40 +56,47 @@ li:hover {
     color: #c4c2c2;
 }
 .brand_name_wrapper{
-    margin-left: 6rem;
+    margin-left: 9rem;
 }
 .brand_name_wrapper p {
     font-size: small;
 }
 
 @media screen and (max-width:500px) {
+    .footer_row{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
     .footer_wrapper {
         padding: 0.1rem 0.1rem;
     }
     .question_text {
-        margin-left: 1.1rem;
+        margin-left: 1.8rem;
     }
     .globe{
         position: absolute;
-        left: 2rem;
+        left: 2.4rem;
         margin: 1.1rem 0 1rem 0;
         color: #c4c2c2;
     }
     .triangle {
         position:absolute;
-        left: 7.8rem;
+        left: 8.1rem;
         color: #c4c2c2;
         margin: 1.3rem 0 0 0;
     }
     .select_wrapper {
-        margin: 2rem 0 1rem 1rem;
+        margin: 2rem 0 1rem 1.5rem;
     }
     .brand_name_wrapper{
-        margin-left: 1rem;
+        margin-left: 1.5rem;
     }
     li {
         list-style: none;
-        margin-top: 0.6rem;
+        margin-top: 1rem;
         font-size: 0.6rem;
         cursor: pointer;
         padding-right: 1.4rem;

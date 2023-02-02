@@ -24,6 +24,7 @@ const Upcoming = () => {
     }
   }
 
+
   useEffect(() => {
     handleFetchMovies()
   }, [])
