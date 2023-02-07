@@ -5,20 +5,21 @@ import '@splidejs/react-splide/css';
 import axios from 'axios';
 import AddtoFavorites from '../AddToFavorites/AddtoFavorites';
 import { useNavigate } from 'react-router-dom';
+import requests from '../../Requests';
 
 const TopRated = () => {
   const [movies, setMovies] = useState([]);
   const navigate = useNavigate();
 
   const handleFetch = () => {
-    const check = localStorage.getItem('trendingMovies')
+    const check = localStorage.getItem('topRated')
 
     if(check) {
       setMovies(JSON.parse(check))
     } else {
-      axios.get(requests.requestTrending).then((res)=> {
+      axios.get(requests.requestTopRated).then((res)=> {
         setMovies(res.data.results);
-        localStorage.setItem('trendingMovies', JSON.stringify(res.data.results))
+        localStorage.setItem('topRated', JSON.stringify(res.data.results))
       })
     }
   }
