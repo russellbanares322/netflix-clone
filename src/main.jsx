@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import {BrowserRouter as Router} from 'react-router-dom';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
       <MovieProvider>
         <App />
-    </MovieProvider>
+      </MovieProvider>
       <ToastContainer
         position="bottom-right"
         autoClose={2000}
@@ -24,8 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         draggable
         pauseOnHover
         theme="light"
-        style={{zIndex:'3'}}
-        />
+        style={{ zIndex: '3' }}
+      />
     </Router>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
