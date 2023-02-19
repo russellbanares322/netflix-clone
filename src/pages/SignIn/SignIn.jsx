@@ -45,7 +45,11 @@ const SignIn = () => {
               placeholder="Email or phone number"
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group
+            style={{ position: 'relative' }}
+            className="mb-3"
+            controlId="formBasicPassword"
+          >
             <Form.Control
               onChange={(e) => setPassword(e.target.value)}
               onClick={() => setShow(!show)}

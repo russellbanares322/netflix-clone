@@ -55,7 +55,7 @@ const Footer = () => {
           <GoTriangleDown className={styles.triangle} size={15} />
         </div>
         <div className={styles.brand_name_wrapper}>
-          <p>Netflix Philippines</p>
+          <p>Netflix Clone</p>
         </div>
       </div>
     </div>
