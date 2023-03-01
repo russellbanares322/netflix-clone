@@ -20,8 +20,6 @@ const Navbar = () => {
       <h1 className={styles.title} onClick={() => navigate('/')}>
         Netflix
       </h1>
-      {/* <h1 onClick={ () => navigate('/projects')}>Projects</h1> */}
-      {/* <h1 onClick={ () => navigate('/sidebar')}>Sidebar</h1> */}
       <div>
         {user ? (
           <div className={styles.username_wrapper}>
