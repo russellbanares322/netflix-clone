@@ -61,7 +61,6 @@ const Upcoming = () => {
               movies.map((movie) => (
                 <SplideSlide key={movie?.id}>
                   <div className={styles.card}>
-                    <div className={styles.gradient}></div>
                     <img
                       className={styles.img}
                       src={`https://image.tmdb.org/t/p/w500/${
