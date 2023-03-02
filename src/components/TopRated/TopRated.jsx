@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import axios from 'axios';
+import api from '../../api/MovieApi';
 import AddtoFavorites from '../AddToFavorites/AddtoFavorites';
 import { useNavigate } from 'react-router-dom';
 import requests from '../../Requests';
@@ -17,7 +17,7 @@ const TopRated = () => {
     if (check) {
       setMovies(JSON.parse(check));
     } else {
-      axios.get(requests.requestTopRated).then((res) => {
+      api.get(requests.requestTopRated).then((res) => {
         setMovies(res.data.results);
         localStorage.setItem('topRated', JSON.stringify(res.data.results));
       });

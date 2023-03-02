@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Image } from 'react-bootstrap';
 import requests from '../../Requests';
 import styles from './styles.module.css';
+import api from '../../api/MovieApi';
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
@@ -13,7 +13,7 @@ const Main = () => {
     if (check) {
       setMovies(JSON.parse(check));
     } else {
-      axios.get(requests.requestPopular).then((res) => {
+      api.get(requests.requestPopular).then((res) => {
         setMovies(res.data.results);
         localStorage.setItem('movie', JSON.stringify(res.data.results));
       });

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../../api/MovieApi';
 import React, { useEffect, useState } from 'react';
 import requests from '../../Requests';
 import styles from './styles.module.css';
@@ -17,7 +17,7 @@ const Popular = () => {
     if (check) {
       setMovies(JSON.parse(check));
     } else {
-      axios.get(requests.requestPopular).then((res) => {
+      api.get(requests.requestPopular).then((res) => {
         setMovies(res.data.results);
         localStorage.setItem('popularMovies', JSON.stringify(res.data.results));
       });
