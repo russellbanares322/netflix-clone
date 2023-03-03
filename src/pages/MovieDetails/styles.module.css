@@ -99,3 +99,19 @@
   line-height: 1.9;
   margin-top: 1.3rem;
 }
+.casts_wrapper,
+.createdby_wrapper,
+.genre_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  font-size: small;
+}
+.casts_wrapper p:first-child,
+.createdby_wrapper p:first-child,
+.genre_wrapper p:first-child {
+  color: var(--secondary);
+}
+.trailer_wrapper {
+  margin: 1.5rem;
+}

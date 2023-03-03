@@ -3,16 +3,23 @@ import styles from './styles.module.css';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Spinner from '../../components/Spinner/Spinner';
-import YouTube from 'react-youtube';
 import api from '../../api/MovieApi';
 import { HiStar } from 'react-icons/hi';
+import MovieTrailer from './MovieTrailer';
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState([]);
-  const [movieTrailer, setMovieTrailer] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [activeContent, setActiveContent] = useState('overview');
 
+  //Active nav content
+  const overview = activeContent === 'overview';
+  const trailer = activeContent === 'trailer';
+  const similar = activeContent === 'similar';
+  const details = activeContent === 'details';
+
+  //Conversion of movie runtime
   const movieHours = Math.floor(movieDetails?.runtime / 60);
   const movieMinutes = movieDetails?.runtime % 60;
   const movieAverage = Math.abs(movieDetails?.vote_average).toFixed(1);
@@ -20,49 +27,26 @@ const MovieDetails = () => {
     .map((val) => val.original_name)
     .slice(0, 4)
     .join(', ');
+  const movieGenres = movieDetails?.genres?.map((val) => val.name).join(', ');
 
-  const handleFetchMovieTrailer = async () => {
-    try {
-      const check = localStorage.getItem('selectedMovie');
-      if (check) {
-        setMovieDetails(JSON.parse(check));
-      } else {
-        const response = await api.get(
-          `/movie/${id}/videos?api_key=${
-            import.meta.env.VITE_REACT_APP_API_KEY
-          }&language=pt-BR&include_video_language=en`
-        );
-        const filteredResponse = response.data.results.filter(
-          (val) => val.name.toUpperCase() === 'OFFICIAL TRAILER'
-        );
-        setMovieTrailer(filteredResponse);
-        localStorage.setItem(JSON.stringify(filteredResponse));
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  //Fetching of movie details
   const handleFetchMovieDetails = async () => {
     setIsLoading(true);
-    await api
-      .get(
+    try {
+      const response = await api.get(
         `/movie/${id}?api_key=${
           import.meta.env.VITE_REACT_APP_API_KEY
         }&language=en-US&append_to_response=credits`
-      )
-      .then((res) => {
-        setMovieDetails(res.data);
-        console.log(res.data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        toast.error(err.message);
-      });
+      );
+      setMovieDetails(response.data);
+      setIsLoading(false);
+    } catch (err) {
+      toast.error(err.message);
+      setIsLoading(false);
+    }
   };
-
   useEffect(() => {
     id && handleFetchMovieDetails();
-    id && handleFetchMovieTrailer();
   }, [id]);
 
   return (
@@ -96,25 +80,50 @@ const MovieDetails = () => {
               <p>16+</p>
             </div>
             <div className={styles.nav}>
-              <p className={styles.active}>OVERVIEW</p>
-              <p>TRAILER</p>
-              <p>SIMILAR</p>
-              <p>DETAILS</p>
+              <p
+                className={overview && `${styles.active}`}
+                onClick={() => setActiveContent('overview')}
+              >
+                OVERVIEW
+              </p>
+              <p
+                className={trailer && `${styles.active}`}
+                onClick={() => setActiveContent('trailer')}
+              >
+                TRAILER
+              </p>
+              <p
+                className={similar && `${styles.active}`}
+                onClick={() => setActiveContent('similar')}
+              >
+                SIMILAR
+              </p>
+              <p
+                className={details && `${styles.active}`}
+                onClick={() => setActiveContent('details')}
+              >
+                DETAILS
+              </p>
             </div>
             <div className={styles.nav_content}>
-              <p className={styles.overview}>{movieDetails?.overview}</p>
-              <div>
-                <p>Starring</p>
-                <p>{movieCasts}</p>
-              </div>
-              <div>
-                <p>Created by</p>
-                <p>asd</p>
-              </div>
-              <div>
-                <p>Genre</p>
-                <p>Test, test, test</p>
-              </div>
+              {overview && (
+                <div>
+                  <p className={styles.overview}>{movieDetails?.overview}</p>
+                  <div className={styles.casts_wrapper}>
+                    <p>Starring</p>
+                    <p>{movieCasts}</p>
+                  </div>
+                  <div className={styles.createdby_wrapper}>
+                    <p>Created by</p>
+                    <p>asd</p>
+                  </div>
+                  <div className={styles.genre_wrapper}>
+                    <p>Genre</p>
+                    <p>{movieGenres}</p>
+                  </div>
+                </div>
+              )}
+              {trailer && <MovieTrailer />}
               <div>
                 <p>Related Movies</p>
               </div>
