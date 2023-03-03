@@ -6,6 +6,9 @@ import Spinner from '../../components/Spinner/Spinner';
 import api from '../../api/MovieApi';
 import { HiStar } from 'react-icons/hi';
 import MovieTrailer from './MovieTrailer';
+import { motion } from 'framer-motion';
+import RecommendedMovies from './RecommendedMovies';
+import AddtoFavorites from '../../components/AddToFavorites/AddtoFavorites';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -63,6 +66,9 @@ const MovieDetails = () => {
             <div className={styles.gradient}></div>
           </div>
           <div className={styles.right}>
+            <p>
+              Add to favorites <AddtoFavorites />
+            </p>
             <div className={styles.header_title}>
               <p className={styles.original_title}>
                 {movieDetails?.original_title}
@@ -77,45 +83,36 @@ const MovieDetails = () => {
               <p>
                 {movieHours}h {movieMinutes}min
               </p>
-              <p>16+</p>
             </div>
             <div className={styles.nav}>
-              <p
-                className={overview && `${styles.active}`}
-                onClick={() => setActiveContent('overview')}
-              >
-                OVERVIEW
-              </p>
-              <p
-                className={trailer && `${styles.active}`}
-                onClick={() => setActiveContent('trailer')}
-              >
-                TRAILER
-              </p>
-              <p
-                className={similar && `${styles.active}`}
-                onClick={() => setActiveContent('similar')}
-              >
-                SIMILAR
-              </p>
-              <p
-                className={details && `${styles.active}`}
-                onClick={() => setActiveContent('details')}
-              >
-                DETAILS
-              </p>
+              <motion.div whileTap={{ scale: 0.9 }}>
+                <p
+                  className={overview && `${styles.active}`}
+                  onClick={() => setActiveContent('overview')}
+                >
+                  OVERVIEW
+                </p>
+              </motion.div>
+              <motion.div whileTap={{ scale: 0.9 }}>
+                <p
+                  className={trailer && `${styles.active}`}
+                  onClick={() => setActiveContent('trailer')}
+                >
+                  TRAILER
+                </p>
+              </motion.div>
             </div>
             <div className={styles.nav_content}>
               {overview && (
                 <div>
                   <p className={styles.overview}>{movieDetails?.overview}</p>
                   <div className={styles.casts_wrapper}>
-                    <p>Starring</p>
+                    <p>Casts</p>
                     <p>{movieCasts}</p>
                   </div>
                   <div className={styles.createdby_wrapper}>
-                    <p>Created by</p>
-                    <p>asd</p>
+                    <p>Status</p>
+                    <p>{movieDetails?.status}</p>
                   </div>
                   <div className={styles.genre_wrapper}>
                     <p>Genre</p>
@@ -124,8 +121,9 @@ const MovieDetails = () => {
                 </div>
               )}
               {trailer && <MovieTrailer />}
-              <div>
-                <p>Related Movies</p>
+              <div className={styles.recommended_wrapper}>
+                <p>Recommended</p>
+                <RecommendedMovies />
               </div>
             </div>
           </div>

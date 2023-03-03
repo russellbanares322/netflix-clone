@@ -6,8 +6,8 @@ const Spinner = () => {
   return (
     <div className={styles.spinner_wrapper}>
       <Circles
-        height="80"
-        width="80"
+        height="50"
+        width="50"
         color="#E50914"
         ariaLabel="circles-loading"
         wrapperClass={styles.spinner}
