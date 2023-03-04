@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import api from '../../api/MovieApi';
 import styles from './styles.module.css';
 import AddtoFavorites from '../../components/AddToFavorites/AddtoFavorites';
@@ -9,6 +9,7 @@ import AddtoFavorites from '../../components/AddToFavorites/AddtoFavorites';
 const RecommendedMovies = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const handleFetchRecommendedMovies = () => {
     const check = localStorage.getItem('recommendedMovies');
@@ -69,10 +70,15 @@ const RecommendedMovies = () => {
                   }`}
                   alt={movie?.title}
                 />
-                <AddtoFavorites movie={movie} />
+                <div className="heart_icon">
+                  <AddtoFavorites movie={movie} />
+                </div>
                 <div
                   className={styles.movie_title_wrapper}
-                  onClick={() => navigate(`/movie-details/${movie?.id}`)}
+                  onClick={() => {
+                    navigate(`/movie-details/${movie?.id}`);
+                    window.scroll(0, 0);
+                  }}
                 >
                   <p className={styles.movie_title}>{movie?.title}</p>
                 </div>

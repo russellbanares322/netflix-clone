@@ -1,14 +1,14 @@
 :root {
   --primary: #f3f3f3;
   --secondary: #555555;
-  --bg: #000000;
+  --bg: #111;
   --red: #e50914;
 }
 
 .movie_details_body {
   background-color: var(--bg);
   height: auto;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 .movie_wrapper {
   padding: 10rem 4rem;
@@ -24,6 +24,13 @@
   width: 25rem;
   height: auto;
   object-fit: fill;
+}
+.gradient {
+  z-index: 4;
+  transform: translateY(-62px);
+  height: 10vh;
+  width: auto;
+  background: linear-gradient(to top, #111 0%, rgba(255, 255, 255, 0) 100%);
 }
 .right {
   margin-top: 2rem;
@@ -178,7 +185,15 @@
   margin-top: 2rem;
   width: 100%;
 }
-
+.favorites_btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #f3f3f3;
+  gap: 0.5rem;
+  margin-bottom: 1.3rem;
+  font-size: 0.9rem;
+}
 @media (max-width: 1200px) {
   .trailer_wrapper {
     overflow: hidden;

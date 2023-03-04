@@ -65,10 +65,15 @@ const Popular = () => {
                       }`}
                       alt={movie?.title}
                     />
-                    <AddtoFavorites movie={movie} />
+                    <div className="heart_icon">
+                      <AddtoFavorites movie={movie} />
+                    </div>
                     <div
                       className={styles.movie_title_wrapper}
-                      onClick={() => navigate(`/movie-details/${movie?.id}`)}
+                      onClick={() => {
+                        navigate(`/movie-details/${movie?.id}`);
+                        window.scroll(0, 0);
+                      }}
                     >
                       <p className={styles.movie_title}>{movie?.title}</p>
                     </div>

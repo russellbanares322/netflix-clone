@@ -6,6 +6,7 @@ import { auth, db } from '../../config/firebase-config';
 import MovieContext from '../../context/MovieContext';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 
 const AddtoFavorites = ({ movie }) => {
   const { handleRemoveMovie, movies } = useContext(MovieContext);
@@ -36,7 +37,7 @@ const AddtoFavorites = ({ movie }) => {
     }
   };
   return (
-    <div>
+    <motion.div whileTap={{ scale: 0.9 }}>
       {savedMovieID?.includes(movie?.id) ? (
         <Heart
           style={{ fill: '#AF1C22', color: 'white' }}
@@ -52,7 +53,7 @@ const AddtoFavorites = ({ movie }) => {
           onClick={handleSaveMovie}
         />
       )}
-    </div>
+    </motion.div>
   );
 };
 

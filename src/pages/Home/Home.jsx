@@ -12,6 +12,7 @@ const Home = () => {
     <>
       <Main />
       <div className={styles.movies_carousel}>
+        <div className={styles.gradient}></div>
         <Upcoming />
         <Popular />
         <Trending />

@@ -20,3 +20,41 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+.heart_icon {
+  position: absolute;
+  bottom: 7.6rem;
+  right: 1rem;
+  color: white;
+  z-index: 2;
+}
+
+@media screen and (max-width: 500px) {
+  .heart_icon {
+    position: absolute;
+    top: 0.3rem;
+    right: 1rem;
+    color: white;
+    z-index: 999999999999999;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 800px) {
+  .heart_icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    color: white;
+    z-index: 999999999999999;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .heart_icon {
+    position: absolute;
+    top: 0.3rem;
+    right: 1rem;
+    color: white;
+    z-index: 999999999999999;
+    cursor: pointer;
+  }
+}

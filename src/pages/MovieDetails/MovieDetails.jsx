@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styles from './styles.module.css';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -9,18 +9,22 @@ import MovieTrailer from './MovieTrailer';
 import { motion } from 'framer-motion';
 import RecommendedMovies from './RecommendedMovies';
 import AddtoFavorites from '../../components/AddToFavorites/AddtoFavorites';
+import MovieContext from '../../context/MovieContext';
 
 const MovieDetails = () => {
   const { id } = useParams();
+  const { movies } = useContext(MovieContext);
   const [movieDetails, setMovieDetails] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [activeContent, setActiveContent] = useState('overview');
 
+  //Verification if the movie is already saved from favorites
+  const savedMovieID = movies?.map((m) => m.id);
+  const isAlreadySaved = savedMovieID.includes(movieDetails?.id);
+
   //Active nav content
   const overview = activeContent === 'overview';
   const trailer = activeContent === 'trailer';
-  const similar = activeContent === 'similar';
-  const details = activeContent === 'details';
 
   //Conversion of movie runtime
   const movieHours = Math.floor(movieDetails?.runtime / 60);
@@ -66,8 +70,9 @@ const MovieDetails = () => {
             <div className={styles.gradient}></div>
           </div>
           <div className={styles.right}>
-            <p>
-              Add to favorites <AddtoFavorites />
+            <p className={styles.favorites_btn}>
+              {isAlreadySaved ? 'Remove from Favorites' : 'Add to Favorites'}
+              <AddtoFavorites movie={movieDetails} />
             </p>
             <div className={styles.header_title}>
               <p className={styles.original_title}>
@@ -104,7 +109,13 @@ const MovieDetails = () => {
             </div>
             <div className={styles.nav_content}>
               {overview && (
-                <div>
+                <motion.div
+                  key="details"
+                  initial={{ x: '50%', opacity: 0, scale: 0.5 }}
+                  animate={{ x: 0, opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                  exit={{ x: '50%', opacity: 0 }}
+                >
                   <p className={styles.overview}>{movieDetails?.overview}</p>
                   <div className={styles.casts_wrapper}>
                     <p>Casts</p>
@@ -118,9 +129,19 @@ const MovieDetails = () => {
                     <p>Genre</p>
                     <p>{movieGenres}</p>
                   </div>
-                </div>
+                </motion.div>
               )}
-              {trailer && <MovieTrailer />}
+              {trailer && (
+                <motion.div
+                  key="trailer"
+                  initial={{ x: '50%', opacity: 0, scale: 0.5 }}
+                  animate={{ x: 0, opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                  exit={{ x: '50%', opacity: 0 }}
+                >
+                  <MovieTrailer />
+                </motion.div>
+              )}
               <div className={styles.recommended_wrapper}>
                 <p>Recommended</p>
                 <RecommendedMovies />

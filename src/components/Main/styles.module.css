@@ -11,11 +11,13 @@
   height: 80vh !important;
   width: 100vw !important;
   object-fit: cover;
+  background-size: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   z-index: -2;
+  background-position: center center;
 }
 
 .details {

@@ -28,12 +28,10 @@ const Main = () => {
       <div className={styles.movie_wrapper}>
         <div className={styles.gradient}></div>
         <Image
-          fluid
           className={styles.img}
           src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
           alt={movie?.title}
         />
-        <div className={styles.gradient}></div>
         <div className={styles.details}>
           <p className={styles.title}>{movie?.title}</p>
           <div className={styles.btns_wrapper}>

@@ -6,12 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { MovieProvider } from './context/MovieContext';
+import { AnimatePresence } from 'framer-motion';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <MovieProvider>
-        <App />
+        <AnimatePresence>
+          <App />
+        </AnimatePresence>
       </MovieProvider>
       <ToastContainer
         position="bottom-right"
