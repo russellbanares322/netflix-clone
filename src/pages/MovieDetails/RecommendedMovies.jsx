@@ -86,6 +86,7 @@ const RecommendedMovies = () => {
             </SplideSlide>
           ))}
       </Splide>
+      <div className={styles.gradient}></div>
     </div>
   );
 };

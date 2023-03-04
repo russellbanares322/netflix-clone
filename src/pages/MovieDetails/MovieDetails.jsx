@@ -20,7 +20,7 @@ const MovieDetails = () => {
 
   //Verification if the movie is already saved from favorites
   const savedMovieID = movies?.map((m) => m.id);
-  const isAlreadySaved = savedMovieID.includes(movieDetails?.id);
+  const isAlreadySaved = savedMovieID?.includes(movieDetails?.id);
 
   //Active nav content
   const overview = activeContent === 'overview';
@@ -35,6 +35,7 @@ const MovieDetails = () => {
     .slice(0, 4)
     .join(', ');
   const movieGenres = movieDetails?.genres?.map((val) => val.name).join(', ');
+  const movieReleaseDate = movieDetails?.release_date?.slice(0, 4);
 
   //Fetching of movie details
   const handleFetchMovieDetails = async () => {
@@ -84,7 +85,7 @@ const MovieDetails = () => {
               </p>
             </div>
             <div className={styles.date_wrapper}>
-              <p>{movieDetails?.release_date}</p>
+              <p>{movieReleaseDate}</p>
               <p>
                 {movieHours}h {movieMinutes}min
               </p>

@@ -2,7 +2,7 @@
   background-image: url('../../assets/netflix_bg.jpg');
   background-size: cover;
   height: 50vh;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 .gradient {
   position: absolute;

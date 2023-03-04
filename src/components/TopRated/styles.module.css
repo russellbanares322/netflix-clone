@@ -18,6 +18,7 @@
 }
 
 .card img {
+  border-radius: 0.2rem;
   cursor: pointer;
   position: absolute;
   left: 0;

@@ -22,7 +22,7 @@
 
 .details {
   position: relative;
-  bottom: -13rem;
+  bottom: -16rem;
   left: 3rem;
 }
 .title {
@@ -68,6 +68,11 @@
   );
 }
 @media screen and (max-width: 500px) {
+  .details {
+    position: relative;
+    top: 10rem;
+    left: 1rem;
+  }
   .img {
     height: 50vh !important;
     width: 50vw !important;
@@ -84,13 +89,6 @@
     height: 50vh;
     z-index: 10;
   }
-  .details {
-    position: relative;
-    top: 1rem;
-    left: 1rem;
-    padding-top: 2.5rem;
-    margin-bottom: 2rem;
-  }
   .title {
     color: #f3f3f3;
     font-size: 1.2rem;
@@ -103,7 +101,7 @@
   .overview {
     color: #f3f3f3;
     text-align: start;
-    width: 0.3vw;
+    width: 0.2vw;
     font-size: 0.3vw;
     padding: 0 1rem 0 0;
   }
@@ -155,7 +153,7 @@
   }
   .details {
     position: relative;
-    top: 7rem;
+    bottom: -17rem;
     left: 1rem;
   }
   .title {
