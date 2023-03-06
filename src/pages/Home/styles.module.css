@@ -7,6 +7,7 @@
   position: relative;
 }
 .gradient {
+  position: relative;
   z-index: 4;
   transform: translateY(-62px);
   height: 10vh;
