@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/firebase-config';
 import { toast } from 'react-toastify';
+import { ThreeDots } from 'react-loader-spinner';
 
 const SignIn = () => {
   const [show, setShow] = useState(false);
@@ -14,12 +15,22 @@ const SignIn = () => {
 
   const navigate = useNavigate();
 
+  const buttonState = isLoading ? (
+    <ThreeDots
+      height="26"
+      width="40"
+      radius="6"
+      color="#F5F5F5"
+      ariaLabel="three-dots-loading"
+      visible={true}
+    />
+  ) : (
+    'Sign In'
+  );
+
   const handleSignIn = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    if (!email || !password) {
-      return toast.error('Fields cannot be left empty');
-    }
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/');
@@ -65,7 +76,7 @@ const SignIn = () => {
               onClick={handleSignIn}
               className={styles.button}
             >
-              Sign In
+              {buttonState}
             </button>
           </div>
           <div className="d-flex justify-content-start align-items-center">
@@ -83,8 +94,13 @@ const SignIn = () => {
           </div>
           <div className={styles.form_footer}>
             <p className={styles.new_text}>
-              New to Netflix?{' '}
-              <span onClick={() => navigate('/sign-up')}>Sign up now.</span>
+              New to Netflix?
+              <span
+                className={styles.signup_text}
+                onClick={() => navigate('/sign-up')}
+              >
+                Sign up now.
+              </span>
             </p>
             <p className={styles.captcha_text}>
               This page is protected by Google reCAPTCHA to ensure you're not a

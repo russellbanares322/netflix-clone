@@ -106,7 +106,12 @@
   color: grey;
   cursor: pointer;
 }
-
+.signup_text {
+  padding-left: 0.5rem;
+}
+.signup_text:hover {
+  text-decoration: underline;
+}
 @media screen and (max-width: 500px) {
   .gradient {
     display: none;

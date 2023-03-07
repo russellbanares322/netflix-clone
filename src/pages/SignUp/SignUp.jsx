@@ -6,6 +6,7 @@ import { auth, db } from '../../config/firebase-config';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import { ThreeDots } from 'react-loader-spinner';
 
 const SignUp = () => {
   const [userName, setUserName] = useState('');
@@ -15,20 +16,31 @@ const SignUp = () => {
 
   const navigate = useNavigate();
 
+  //Button state depending on isLoading
+  const buttonState = isLoading ? (
+    <ThreeDots
+      height="26"
+      width="40"
+      radius="6"
+      color="#F5F5F5"
+      ariaLabel="three-dots-loading"
+      visible={true}
+    />
+  ) : (
+    'Sign Up'
+  );
+
   //Signup handler
   const handleSignUp = async (e) => {
-    setIsLoading(false);
+    setIsLoading(true);
     e.preventDefault();
-    if (!userName || !email || !password) {
-      return toast.error('Fields cannot be left empty');
-    }
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setIsLoading(true);
       updateProfile(auth.currentUser, { displayName: userName });
       setDoc(doc(db, 'users', email), {
         savedMovies: [],
       });
+      setIsLoading(false);
       navigate('/');
       toast.success('Successfully created an account');
     } catch (err) {
@@ -76,7 +88,7 @@ const SignUp = () => {
               disabled={isLoading}
               className={styles.button}
             >
-              {isLoading ? 'Signing up...' : 'Sign Up'}
+              {buttonState}
             </button>
           </div>
           <div className="d-flex justify-content-start align-items-center">
