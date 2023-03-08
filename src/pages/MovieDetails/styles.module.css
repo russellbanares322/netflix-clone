@@ -121,6 +121,10 @@
 .genre_wrapper p:first-child {
   color: var(--secondary);
 }
+.remaining_casts_count {
+  font-size: 0.7rem;
+  padding-left: 0.6rem;
+}
 .trailer_wrapper {
   overflow: hidden;
   padding-bottom: 56.25%;

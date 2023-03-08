@@ -34,6 +34,8 @@ const MovieDetails = () => {
     .map((val) => val.original_name)
     .slice(0, 4)
     .join(', ');
+  const movieRemainingCastsCount = movieDetails?.credits?.cast.length - 5;
+
   const movieGenres = movieDetails?.genres?.map((val) => val.name).join(', ');
   const movieReleaseDate = movieDetails?.release_date?.slice(0, 4);
 
@@ -120,7 +122,12 @@ const MovieDetails = () => {
                   <p className={styles.overview}>{movieDetails?.overview}</p>
                   <div className={styles.casts_wrapper}>
                     <p>Casts</p>
-                    <p>{movieCasts}</p>
+                    <p>
+                      {movieCasts}..
+                      <span className={styles.remaining_casts_count}>
+                        +{movieRemainingCastsCount}
+                      </span>
+                    </p>
                   </div>
                   <div className={styles.createdby_wrapper}>
                     <p>Status</p>
