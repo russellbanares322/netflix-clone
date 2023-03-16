@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../../components/Footer/Footer';
+import Horror from '../../components/Horror/Horror';
 import Main from '../../components/Main/Main';
 import Popular from '../../components/Popular/Popular';
 import TopRated from '../../components/TopRated/TopRated';
@@ -13,6 +14,7 @@ const Home = () => {
       <Main />
       <div className={styles.movies_carousel}>
         <div className={styles.gradient}></div>
+        <Horror />
         <Upcoming />
         <Popular />
         <Trending />

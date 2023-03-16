@@ -1,6 +1,6 @@
 .movies_carousel {
   background-color: #111;
-  height: auto;
+  height: 100%;
   width: 100vw;
   padding-bottom: 5rem;
   z-index: 1;

@@ -11,6 +11,9 @@ const requests = {
   requestUpcoming: `/movie/upcoming?api_key=${
     import.meta.env.VITE_REACT_APP_API_KEY
   }&language=en-US&page=1`,
+  requestHorror: `/search/movie?api_key=${
+    import.meta.env.VITE_REACT_APP_API_KEY
+  }&language=en-US&query=horror&page=1&include_adult=false`,
 };
 
 export default requests;

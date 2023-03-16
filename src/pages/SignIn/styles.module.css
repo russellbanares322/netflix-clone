@@ -1,7 +1,7 @@
 .form_wrapper {
   background-image: url('../../assets/netflix_bg.jpg');
   background-size: cover;
-  height: auto;
+  height: 100%;
   padding-bottom: 1.9rem;
 }
 .form_col {
