@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { ThreeDots } from 'react-loader-spinner';
+import AuthLayout from '../../Layout/AuthLayout/AuthLayout';
 
 const SignUp = () => {
   const [userName, setUserName] = useState('');
@@ -49,9 +50,7 @@ const SignUp = () => {
     }
   };
   return (
-    <div className={styles.form_wrapper}>
-      <div className={styles.gradient}></div>
-      <div className={styles.gradient2}></div>
+    <AuthLayout>
       <Col lg={12} className={styles.form_col}>
         <Form className={styles.form}>
           <p className={styles.title}>Sign Up</p>
@@ -116,7 +115,7 @@ const SignUp = () => {
           </div>
         </Form>
       </Col>
-    </div>
+    </AuthLayout>
   );
 };
 

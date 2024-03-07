@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/firebase-config';
 import { toast } from 'react-toastify';
 import { ThreeDots } from 'react-loader-spinner';
+import AuthLayout from '../../Layout/AuthLayout/AuthLayout';
 
 const SignIn = () => {
   const [show, setShow] = useState(false);
@@ -42,9 +43,7 @@ const SignIn = () => {
     }
   };
   return (
-    <div className={styles.form_wrapper} onClick={() => setShow(false)}>
-      <div className={styles.gradient}></div>
-      <div className={styles.gradient2}></div>
+    <AuthLayout onClick={() => setShow(false)}>
       <Col lg={12} className={styles.form_col}>
         <Form className={styles.form}>
           <p className={styles.title}>Sign In</p>
@@ -109,7 +108,7 @@ const SignIn = () => {
           </div>
         </Form>
       </Col>
-    </div>
+    </AuthLayout>
   );
 };
 
