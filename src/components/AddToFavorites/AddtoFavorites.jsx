@@ -19,7 +19,7 @@ const AddtoFavorites = ({ movie }) => {
   const handleSaveMovie = async (e) => {
     e.preventDefault();
     if (!user) {
-      toast.error('You need to login');
+      toast.error('You need to login to save movie in favorites');
     } else {
       if (!savedMovieID?.includes(movie.id)) {
         await updateDoc(movieID, {
