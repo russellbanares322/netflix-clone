@@ -40,7 +40,7 @@ const Main = () => {
           </div>
           <p className={styles.date}>Released: {movie?.release_date}</p>
           <p className={styles.overview}>
-            {movie?.overview.substring(0, 120)}...
+            {`${movie?.overview.substring(0, 120)}...`}
           </p>
         </div>
       </div>
