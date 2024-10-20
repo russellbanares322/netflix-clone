@@ -9,6 +9,8 @@ const MovieTrailers = () => {
   const { id } = useParams();
   const [movieTrailers, setMovieTrailers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const showLoaderSpinner = isLoading;
+  const showTrailerComponent = !isLoading && movieTrailers?.length > 0;
 
   const handleFetchMovieTrailer = async () => {
     setIsLoading(true);
@@ -18,11 +20,14 @@ const MovieTrailers = () => {
           import.meta.env.VITE_REACT_APP_API_KEY
         }&language=pt-BR&include_video_language=en`
       );
-      const responseData = response.data.results;
+      const responseData = response?.data?.results?.filter(
+        (item) => item.official
+      );
       setMovieTrailers(responseData);
       setIsLoading(false);
     } catch (err) {
       setIsLoading(false);
+      throw new Error(err);
     }
   };
 
@@ -32,7 +37,7 @@ const MovieTrailers = () => {
 
   return (
     <>
-      {isLoading ? (
+      {showLoaderSpinner && (
         <Circles
           height="80"
           width="80"
@@ -41,11 +46,15 @@ const MovieTrailers = () => {
           wrapperClass={styles.spinner}
           visible={true}
         />
-      ) : (
+      )}
+      {showTrailerComponent && (
         <div className={styles.trailer_wrapper}>
           {movieTrailers.map((trailer) => (
-            <div key={trailer?.id}>
-              <h1>{trailer?.name}</h1>
+            <div
+              style={{ display: 'flex', flexDirection: 'column' }}
+              key={trailer?.id}
+            >
+              <p className={styles.trailer_name}>{trailer?.name}</p>
               <YouTube
                 opts={{
                   width: '100%',
@@ -58,6 +67,17 @@ const MovieTrailers = () => {
             </div>
           ))}
         </div>
+      )}
+      {!showTrailerComponent && (
+        <p
+          style={{
+            marginTop: '20px',
+            marginBottom: '10px',
+            fontSize: '1.5rem',
+          }}
+        >
+          No trailer to be shown.
+        </p>
       )}
     </>
   );
