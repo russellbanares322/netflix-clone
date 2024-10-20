@@ -3,12 +3,11 @@ import { useParams } from 'react-router-dom';
 import api from '../../api/MovieApi';
 import YouTube from 'react-youtube';
 import styles from './styles.module.css';
-import Spinner from '../../components/Spinner/Spinner';
 import { Circles } from 'react-loader-spinner';
 
-const MovieTrailer = () => {
+const MovieTrailers = () => {
   const { id } = useParams();
-  const [movieTrailer, setMovieTrailer] = useState([]);
+  const [movieTrailers, setMovieTrailers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFetchMovieTrailer = async () => {
@@ -19,13 +18,10 @@ const MovieTrailer = () => {
           import.meta.env.VITE_REACT_APP_API_KEY
         }&language=pt-BR&include_video_language=en`
       );
-      const filteredResponse = response.data.results.filter(
-        (val) => val.name.toUpperCase() === 'OFFICIAL TRAILER'
-      );
-      setMovieTrailer(filteredResponse);
+      const responseData = response.data.results;
+      setMovieTrailers(responseData);
       setIsLoading(false);
     } catch (err) {
-      console.log(err);
       setIsLoading(false);
     }
   };
@@ -47,8 +43,9 @@ const MovieTrailer = () => {
         />
       ) : (
         <div className={styles.trailer_wrapper}>
-          {movieTrailer.map((trailer) => (
+          {movieTrailers.map((trailer) => (
             <div key={trailer?.id}>
+              <h1>{trailer?.name}</h1>
               <YouTube
                 opts={{
                   width: '100%',
@@ -66,4 +63,4 @@ const MovieTrailer = () => {
   );
 };
 
-export default MovieTrailer;
+export default MovieTrailers;

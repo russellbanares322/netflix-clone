@@ -36,7 +36,7 @@ const RecommendedMovies = () => {
     id && handleFetchRecommendedMovies();
   }, [id]);
   return (
-    <div className={styles.wrapper}>
+    <div>
       <Splide
         options={{
           perPage: 3,

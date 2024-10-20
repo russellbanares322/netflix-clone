@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import Spinner from '../../components/Spinner/Spinner';
 import api from '../../api/MovieApi';
 import { HiStar } from 'react-icons/hi';
-import MovieTrailer from './MovieTrailer';
+import MovieTrailers from './MovieTrailers';
 import { motion } from 'framer-motion';
 import RecommendedMovies from './RecommendedMovies';
 import AddtoFavorites from '../../components/AddToFavorites/AddtoFavorites';
@@ -88,9 +88,7 @@ const MovieDetails = () => {
             </div>
             <div className={styles.date_wrapper}>
               <p>{movieReleaseDate}</p>
-              <p>
-                {movieHours}h {movieMinutes}min
-              </p>
+              <p>{`${movieHours}h ${movieMinutes}min`}</p>
             </div>
             <div className={styles.nav}>
               <motion.div whileTap={{ scale: 0.9 }}>
@@ -147,7 +145,7 @@ const MovieDetails = () => {
                   transition={{ duration: 0.2, ease: 'easeOut' }}
                   exit={{ x: '50%', opacity: 0 }}
                 >
-                  <MovieTrailer />
+                  <MovieTrailers />
                 </motion.div>
               )}
               <div className={styles.recommended_wrapper}>

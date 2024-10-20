@@ -14,7 +14,7 @@
   padding: 10rem 4rem;
   display: flex;
   gap: 5rem;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   color: var(--primary);
 }
 .left {
@@ -126,19 +126,21 @@
   padding-left: 0.6rem;
 }
 .trailer_wrapper {
-  overflow: hidden;
   padding-bottom: 56.25%;
-  position: relative;
   height: 0;
   margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  overflow: auto;
 }
+
 .video_player {
-  left: 0;
-  top: 0;
   height: 100%;
   width: 100%;
-  position: absolute;
 }
+
 .spinner {
   display: flex;
   justify-content: center;
@@ -188,7 +190,6 @@
   padding-top: 5rem;
 }
 .recommended_wrapper {
-  margin-top: 2rem;
   width: 100%;
 }
 .favorites_btn {
@@ -200,26 +201,26 @@
   margin-bottom: 1.3rem;
   font-size: 0.9rem;
 }
+
 @media (max-width: 1100px) {
   .trailer_wrapper {
     overflow: hidden;
     padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
+    height: 100%;
     margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 15px;
   }
   .video_player {
-    left: 0;
-    top: 0;
     height: 100%;
     width: 100%;
-    position: absolute;
   }
   .movie_wrapper {
     padding: 7rem 2rem;
     display: flex;
     gap: 5rem;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
     color: var(--primary);
   }
   .right {
