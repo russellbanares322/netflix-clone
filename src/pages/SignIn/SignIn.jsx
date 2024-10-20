@@ -6,7 +6,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/firebase-config';
 import { toast } from 'react-toastify';
 import { ThreeDots } from 'react-loader-spinner';
-import AuthLayout from '../../Layout/AuthLayout/AuthLayout';
+import AuthLayout from '../../layout/AuthLayout/AuthLayout';
 
 const SignIn = () => {
   const [show, setShow] = useState(false);

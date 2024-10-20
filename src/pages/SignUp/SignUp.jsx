@@ -7,7 +7,7 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { ThreeDots } from 'react-loader-spinner';
-import AuthLayout from '../../Layout/AuthLayout/AuthLayout';
+import AuthLayout from '../../layout/AuthLayout/AuthLayout';
 
 const SignUp = () => {
   const [userName, setUserName] = useState('');
